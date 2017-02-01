@@ -1,2 +1,3 @@
 # petj-mvp
-Minimum viable WordPress theme. Skeleton for theme building. 
+
+The minimum viable WordPress theme. 
