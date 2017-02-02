@@ -14,8 +14,16 @@ This theme, like WordPress, is licensed under the GPL.
 Use it in order to comprehend WordPress themes.
 */
 
+/* Rough layout. Kubrick inspired. */
 body {
   font-family: sans-serif;
+}
+
+#wrap {
+  background-color: #000;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* center layout */
@@ -26,7 +34,6 @@ header, main, footer {
 }
 
 main {
-  background-color: #fff;
   width: 900px;
 }
 
@@ -34,7 +41,7 @@ article {
   position: relative;
   width: 600px;
   float: left;
-  background-color: #fff;
+  background-color: #99b7e8;
   padding: 7px;
 }
 
@@ -47,7 +54,7 @@ article {
 }
 
 header, footer {
-  width: 900px;
+  width: 820px;
   padding: 2em;
   color: #fff;
   background-color: #000;

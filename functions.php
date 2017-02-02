@@ -16,10 +16,6 @@
  */
 if ( ! isset( $content_width ) ) $content_width = 600;
 
-/**
- * Enqueue scripts (e.g. Bootstrap Jquery)
- */
-
 
 /**
  * Enqueue styles
@@ -31,9 +27,12 @@ function themeslug_enqueue_style() {
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
+
 /**
- * Title tag
+ * Enqueue scripts (e.g. Bootstrap Jquery)
  */
+
+
 /**
  * Title-tag
  **/
@@ -91,6 +90,7 @@ add_action( 'widgets_init', 'maat_widgets_init' );
 
 /**
  * Costum header
+ * .. not implemented ..
  */
 
 /**
@@ -102,15 +102,18 @@ $args = array(
 );
 add_theme_support( 'custom-background', $args );
 
+
 /**
  * Add editor styles
  */
 add_editor_style();
 
+
 /**
  * Theme thumbnails
  */
 add_theme_support( "post-thumbnails" );
+
 
 /**
  * Add HTML5 theme support.

@@ -23,9 +23,11 @@
   </head>
 <body <?php body_class(); ?>>
 
+<div id="wrap">
+
 <header>
   <!-- header link to "home" -->
-  <a href="<?php bloginfo('url'); ?>">
+  <a href="<?php echo esc_url( bloginfo('url') ); ?>">
 
     <!-- site name -->
     <h1><?php bloginfo( 'name' ); ?></h1>
@@ -143,6 +145,8 @@
 <footer class="aligncenter">
    &copy; GPLv3 Per T. Jensen <?php echo date('Y'); ?>
 </footer>
+
+</div>
 
 
 <!-- JavaScript sample -->
