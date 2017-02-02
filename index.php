@@ -27,7 +27,7 @@
 
 <header>
   <!-- header link to "home" -->
-  <a href="<?php echo esc_url( bloginfo('url') ); ?>">
+  <a href="<?php echo esc_url( home_url() ) ?>">
 
     <!-- site name -->
     <h1><?php bloginfo( 'name' ); ?></h1>
@@ -66,7 +66,6 @@
 
 
    	<!-- Display the Title as a link to the Post's permalink. -->
-
    	<h2>
       <a href="<?php the_permalink(); ?>" 
         rel="bookmark" 
@@ -74,6 +73,8 @@
       </a>
     </h2>
 
+    <!-- the avatar -->
+    <?php echo get_avatar( 'email', '55' ); ?> 
 
    	<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->
    	<small>
@@ -91,8 +92,38 @@
    	<p class="postmetadata"><?php _e( 'Posted in' ); ?> <?php the_category( ', ' ); ?></p>
    	</div> <!-- closes the first div box -->
 
+    <!-- display the tags --> 
+    <div class="tags">
+      <?php the_tags( 'Tags: ', ', ', '' ); ?> 
+    </div>
 
+    <!-- post navigation -->
+    <div class="previousNext">
+      <?php posts_nav_link(); ?>
+    </div>
 
+    <!-- Comments -->
+    <h4> <?php _e('Comments','petj-mvp'); ?> </h4>
+     <?php
+    //Get only the approved comments 
+    // @link: https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comments/#simple-comments-loop
+    $args = array(
+        'status' => 'approve'
+    );
+     
+    // The comment Query
+    $comments_query = new WP_Comment_Query;
+    $comments = $comments_query->query( $args );
+     
+    // Comment Loop
+    if ( $comments ) {
+        foreach ( $comments as $comment ) {
+            echo '<p>' . $comment->comment_content . '</p>';
+        }
+    } else {
+        echo 'No comments found.';
+    }
+    ?>
 
    	<!-- Stop The Loop (but note the "else:" - see next line). -->
    <?php endwhile; else : ?>
@@ -102,16 +133,10 @@
 
    	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 
-
    	<!-- REALLY stop The Loop. -->
    <?php endif; ?>
 
-
-  <?php 
-  /**
-   * ------- the loop end -------
-   */
-  ?>
+  <?php /* ------- the loop end ------- */ ?>
 
   </article>
 
