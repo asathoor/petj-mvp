@@ -1,20 +1,125 @@
 /*
 Theme Name: petj-mvp
-Theme URI: http://github.com/asathoor/
+Theme URI: https://github.com/asathoor/petj-mvp
 Author: the Per Thykjaer Jensen
 Author URI: http://github.com/asathoor/
 Description: A theme with a yellow background. That's it.
 Version: 1.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: 
+Tags: education
 Text Domain: petj-mvp
 
 This theme, like WordPress, is licensed under the GPL.
 Use it in order to comprehend WordPress themes.
 */
 
-/* It's a yellow background */
 body {
+  font-family: sans-serif;
+}
+
+/* center layout */
+header, main, footer {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+main {
+  background-color: #fff;
+  width: 900px;
+}
+
+article {
+  position: relative;
+  width: 600px;
+  float: left;
+  background-color: #fff;
+  padding: 7px;
+}
+
+#sidebar {
+  position: relative;
+  width: 275px;
+  float: right;
   background-color: yellow;
+  padding: 4px;
+}
+
+header, footer {
+  width: 900px;
+  padding: 2em;
+  color: #fff;
+  background-color: #000;
+  opacity: 0.7;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+  clear: both; 
+}
+
+header a {
+  color: #fff;
+}
+
+/* control large images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.entry-content img, 
+.entry-summary img, 
+.comment-content img, 
+.widget img, 
+.wp-caption {
+  max-width: 100%;
+  height: auto;
+}
+
+/* pre overflow */
+pre, code {
+  overflow: auto;
+}
+
+/* Recommended in connection with content width in functions.php */
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+/* WP Required classes */
+.wp-caption-text {
+  font-style: italic;
+}
+
+.sticky {
+  background-color: silver;
+}
+
+.screen-reader-text {
+font-style: italic;
+}
+
+.gallery-caption {
+font-style: italic;
+}
+
+.bypostauthor {
+font-style: italic;
+  font-weight: bold;
+}
+
+.alignright {
+  text-align: right;
+}
+
+.alignleft {
+  text-align: left;
+}
+
+.aligncenter {
+  text-align: center;
 }
