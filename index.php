@@ -103,27 +103,49 @@
     </div>
 
     <!-- Comments -->
-    <h4> <?php _e('Comments','petj-mvp'); ?> </h4>
-     <?php
-    //Get only the approved comments 
-    // @link: https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comments/#simple-comments-loop
-    $args = array(
-        'status' => 'approve'
-    );
-     
-    // The comment Query
-    $comments_query = new WP_Comment_Query;
-    $comments = $comments_query->query( $args );
-     
-    // Comment Loop
-    if ( $comments ) {
-        foreach ( $comments as $comment ) {
-            echo '<p>' . $comment->comment_content . '</p>';
-        }
-    } else {
-        echo 'No comments found.';
-    }
-    ?>
+    <?php comments_template(); // (in loop) ?>
+
+    <div id="comments" class="comments-area">
+
+	    <?php if ( have_comments() ) : ?>
+		    <h2 class="comments-title">
+			    <?php
+				    printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'maat-or-the-improved-bootstrap' ),
+					    number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			    ?>
+		    </h2>
+
+		    <ol class="comment-list">
+			    <?php
+				    wp_list_comments( array(
+					    'style'       => 'ol',
+					    'short_ping'  => true,
+					    'avatar_size' => 74,
+				    ) );
+			    ?>
+		    </ol><!-- .comment-list -->
+
+		    <?php
+			    // Are there comments to navigate through?
+			    if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+		    ?>
+		    <nav class="navigation comment-navigation" role="navigation">
+			    <h1 class="screen-reader-text section-heading"><?php _e( 'Comment navigation', 'maat-or-the-improved-bootstrap' ); ?></h1>
+			    <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'maat-or-the-improved-bootstrap' ) ); ?></div>
+			    <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'maat-or-the-improved-bootstrap' ) ); ?></div>
+		    </nav><!-- .comment-navigation -->
+		    <?php endif; // Check for comment navigation ?>
+
+		    <?php if ( ! comments_open() && get_comments_number() ) : ?>
+		    <p class="no-comments"><?php _e( 'Comments are closed.' , 'maat-or-the-improved-bootstrap' ); ?></p>
+		    <?php endif; ?>
+
+	    <?php endif; // have_comments() ?>
+
+	    <?php comment_form(); ?>
+
+    </div><!-- #comments --> 
+
 
    	<!-- Stop The Loop (but note the "else:" - see next line). -->
    <?php endwhile; else : ?>
