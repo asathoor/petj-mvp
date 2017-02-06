@@ -74,7 +74,7 @@ add_action( 'init', 'register_my_menu' );
 /**
  * Widget area
  */
-function maat_widgets_init() {
+function petjmvp_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => 'Home right sidebar',
@@ -86,7 +86,7 @@ function maat_widgets_init() {
 	) );
 
 }
-add_action( 'widgets_init', 'maat_widgets_init' );
+add_action( 'widgets_init', 'petjmvp_widgets_init' );
 
 /**
  * Costum header
