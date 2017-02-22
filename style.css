@@ -130,4 +130,18 @@ font-style: italic;
 .aligncenter {
   text-align: center;
 }
-0
+
+/**
+ * Menu
+ */
+ .menu ul {
+	list-style: none;
+	display: block;
+	background-color: orange;
+	padding-top: .5em;
+	padding-bottom: .5em; 
+ }
+ 
+ .menu ul a:hover {
+	background-color: orangered; 
+ }
