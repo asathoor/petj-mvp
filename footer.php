@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 	/* <![CDATA[ */
 	// content of your Javascript goes here
-		console.log('JavaScript: ok!');
+		console.log('Vanilla JavaScript = ok. Alert level: green.');
 	/* ]]> */
 	</script>
 
