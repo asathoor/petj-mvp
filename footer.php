@@ -13,6 +13,34 @@
 /* ]]> */
 </script>
 
+
+<script>
+/**
+ * Jquery Sample
+ */
+( function( $ ) {
+
+	// code goes here
+	console.log('Jquery: all systems up and running. Alert level: green.');
+
+	// hide the children
+	$('.children').toggle();
+	
+	// Based on @url: http://callmenick.com/post/slide-down-menu-with-jquery-and-css
+	$( '.page_item_has_children' ).hover(
+		      function(){
+		          $(this).children('.children').slideDown(200);
+		      },
+		      function(){
+		          $(this).children('.children').slideUp(200);
+		      }
+		  );
+
+
+} )( jQuery ); // jquery end
+
+</script>
+
 <?php wp_footer(); // load this after your scripts ?>
 </body>
 </html>
