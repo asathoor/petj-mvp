@@ -6,7 +6,7 @@
 
 
 <!-- JavaScript sample -->
-	<script type="text/javascript">
+	<script>
 	/* <![CDATA[ */
 	// content of your Javascript goes here
 		console.log('Vanilla JavaScript = ok. Alert level: green.');
