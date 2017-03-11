@@ -60,16 +60,3 @@
 </main><!-- end main content -->
 
 <?php get_footer(); ?>
-
-
------------
-
-<?php get_header(); ?>
-
-<div id="content" class="narrowcolumn">
-
-<!-- This sets the $curauth variable -->
-
-</div>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
