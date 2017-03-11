@@ -17,6 +17,7 @@ Use it in order to comprehend WordPress themes.
 /* Rough layout. Kubrick inspired. */
 body {
   font-family: sans-serif;
+	font-size: larger;
 }
 
 #wrap {
