@@ -20,11 +20,11 @@ if ( have_posts() ) {
 		//
 		the_title('<h3 class="title">','</h3>');
 
-		echo '<p class="content">';
+		echo '<div class="content">';
 
 			the_content();
 
-		echo '</p>';
+		echo '</div>';
 		//
 	} // end while
 } // end if
